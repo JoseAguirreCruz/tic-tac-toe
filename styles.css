@@ -1,0 +1,26 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#board {
+  display: flex;
+  width: 80vmin;
+/* vmin - calculates the percentage of the shortest side of your viewport */ 
+  flex-wrap: wrap;
+  gap: 1vmin;
+}
+
+.square{
+  width: 25vmin;
+  height: 25vmin;
+  border: 1px solid lightblue
+}
+
+.TicHeader{
+  text-align: center;
+}
+
+#board {
+  margin: 0 auto;
+}
