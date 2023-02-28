@@ -5,29 +5,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Tic Tac Toe Game</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link href="styles.css" rel="stylesheet" type="text/css" />
-  <script src="main.js" defer></script>
+  <script src="main.js" defer></script> 
 </head>
-
 <body>
+  <div id="modal">
+    <h2>Welcome to Tic Tac Toe Game! </h2>
+    <p>Click the button below to start playing, enjoy!</p>
+    <button id="playButton">Play Now</button>
+  </div>
   <h1 class="TicHeader"> Tic Tac Toe</h1>
   <section id="board">
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
-
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
-
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
     <div class="winMessage" id="winningMessage">
       <div id="winText"></div>
-    <button id="restartButton">Reset Game</button>
-  </div>
+      <button class="RButton" id="restartButton">Reset Game</button>
+    </div>
+    <div id="confetti"></div>
   </section>
+  <script src="confetti.min.js"></script>
+  <footer>
+    <p>© 2023 Tic Tac Toe Game. All rights reserved.</p>
+  </footer>
+  
 </body>
 
 </html>

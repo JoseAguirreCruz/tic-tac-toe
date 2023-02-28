@@ -3,24 +3,219 @@ html {
   width: 100%;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: #3C9AB6 ;
+  overflow: hidden;
+  position: relative;
+}
+
 #board {
   display: flex;
   width: 80vmin;
 /* vmin - calculates the percentage of the shortest side of your viewport */ 
   flex-wrap: wrap;
   gap: 1vmin;
+  margin: 0 auto;
 }
 
 .square{
   width: 25vmin;
   height: 25vmin;
-  border: 1px solid lightblue
+  border: 1px solid rgb(25, 121, 152);
+  font-size: 4rem;
+  text-align: center;
+  line-height: 100px;
+  background-color: #eee;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+@media only screen and (max-width: 600px) {
+  #board {
+    width: 90vw;
+  }
+  
+  .square {
+    font-size: 2rem;
+  }
+}
+
 
 .TicHeader{
   text-align: center;
+  color: white;
 }
 
-#board {
-  margin: 0 auto;
+
+.square:hover {
+  background-color: #ddd;
+}
+
+.square.x:before {
+  content: "X";
+}
+
+.square.circle:before {
+  content: "O";
+}
+
+.winning-square {
+  background-color: #f9a828;
+  border-color: #f9a828;
+  animation: pulse 1s infinite alternate;
+}
+
+.winMessage {
+  text-align: center;
+}
+
+
+@keyframes pulse {
+  from {
+    background-color: #f9a828;
+    border-color: #f9a828;
+  }
+  to {
+    background-color: #fff;
+    border-color: #fff;
+  }
+}
+
+#winningMessage {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+#modal h2 {
+  margin-top: 0;
+}
+
+#playButton {
+  background-color: #3C9AB6;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#playButton:hover {
+  background-color: #21677c;
+}
+
+.hide {
+  display: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #f00;
+  animation: confetti 2s ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-delay: -1s;
+}
+
+#confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, 100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.message-container {
+  position: fixed;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  background-color: rgba(128, 128, 128, 0.262);
+  padding: 100%;
+}
+
+.message {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3E8E41;
+}
+
+.play-again-btn {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.play-again-btn:hover {
+  background-color: #3E8E41;
+}
+
+.RButton {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 75px;
+}
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
 }
